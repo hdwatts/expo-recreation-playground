@@ -8,7 +8,6 @@ import { Text, View } from "./Themed";
 import Colors from "@/constants/Colors";
 
 export default function EditScreenInfo({ path }: { path: string }) {
-  const [cookie, setCookie] = useState("");
   return (
     <View>
       <View style={styles.getStartedContainer}>
@@ -19,7 +18,6 @@ export default function EditScreenInfo({ path }: { path: string }) {
                 const resp = await fetch("http://localhost:8081/cookie");
                 const data = await resp.json();
                 alert("Hello " + data.hello);
-                setCookie(document.cookie);
               } catch (e) {
                 alert("Error making request, is expo running?");
               }
@@ -34,7 +32,6 @@ export default function EditScreenInfo({ path }: { path: string }) {
                 const resp = await fetch("http://localhost:8082/cookie");
                 const data = await resp.json();
                 alert("Hello " + data.hello);
-                setCookie(document.cookie);
               } catch (e) {
                 alert("Error making request, is the express server running?");
               }
@@ -42,13 +39,6 @@ export default function EditScreenInfo({ path }: { path: string }) {
             title="Express Route"
           />
         </Pressable>
-        <Text
-          style={styles.getStartedText}
-          lightColor="rgba(0,0,0,0.8)"
-          darkColor="rgba(255,255,255,0.8)"
-        >
-          Current Cookie: {cookie}
-        </Text>
       </View>
 
       <View style={styles.helpContainer}>
