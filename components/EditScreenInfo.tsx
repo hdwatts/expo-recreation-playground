@@ -6,6 +6,7 @@ import { ExternalLink } from "./ExternalLink";
 import { Text, View } from "./Themed";
 
 import Colors from "@/constants/Colors";
+import { FINALCIRCLE } from "./circular/frontend/circle1";
 
 export default function EditScreenInfo({ path }: { path: string }) {
   return (
@@ -40,7 +41,7 @@ export default function EditScreenInfo({ path }: { path: string }) {
           />
         </Pressable>
       </View>
-
+      <Text>Circular Dependency: {FINALCIRCLE}</Text>
       <View style={styles.helpContainer}>
         <ExternalLink
           style={styles.helpLink}
